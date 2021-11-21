@@ -1,0 +1,59 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+
+#define R1 4          
+#define C1 4            
+#define R2 4        
+#define C2 4           
+ 
+void Mat(int mat1[][C1], int mat2[][C2]) {
+    int rslt[R1][C2];
+ 
+    printf("Multiplication of given two matrices is:\n\n");
+ 
+    for (int i = 0; i < R1; i++) {
+        for (int j = 0; j < C2; j++) {
+            rslt[i][j] = 0;
+            for (int k = 0; k < R2; k++) {
+                rslt[i][j] += mat1[i][k] * mat2[k][j];
+            }
+            printf("%d\t", rslt[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main(void) {
+    int mat1[R1][C1] = {
+            {1, 1, 1, 1},
+            {2, 2, 2, 2},
+            {3, 3, 3, 3},
+            {4, 4, 4, 4}
+    };
+ 
+    int mat2[R2][C2] = {
+            {1, 1, 1, 1},
+            {2, 2, 2, 2},
+            {3, 3, 3, 3},
+            {4, 4, 4, 4}
+    };
+ 
+   
+ 
+    if (C1 != R2) {
+        printf("The number of columns in Matrix-1  must be equal to the number of rows in Matrix-2\n");
+        exit(EXIT_FAILURE);
+    }
+ 
+    Mat(mat1, mat2);
+ 
+    return 0;
+}
+ 
