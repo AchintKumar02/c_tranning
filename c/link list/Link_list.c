@@ -34,7 +34,7 @@ void insert_bet(node **head_ref, int new_data){
         new_node->next = NULL;
         printf("Enter the position\n");
         scanf("%d", &count);
-        for (int i = 0; i < count; i++){
+        for (int i = 1; i < count - 1; i++){
             temt = temt -> next;
         }
         new_node -> next = temt -> next;
